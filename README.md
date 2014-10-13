@@ -25,16 +25,19 @@ For this example we'll assume you are trying to install capirca-web on a clean i
  3. Unzip the archive:  
  `unzip capirca-web-master.zip`
  4. Edit the `capirca_base` variable in the `capirca-web-master/aclcheck_cgi.py` file to reflect the path of your capirca directory using your favourite editor (nano, vim etc)
- 5. Make sure your capirca directory is readable by the Apache `www-data` user
- 6. Copy the static files to the Apache web directory:  
- `sudo cp -r capirca-web-master/static/* /var/www/`
- 7. Copy the Python script to the Apache cgi-bin directory:  
+ 5. If the path to your cgi-bin directory is anything other than `/cgi-bin/`, edit the `cgi_script` variable in the `capirca-web-master/static/js/custom.js` file to reflect that
+ 6. Make sure your capirca directory is readable by the Apache `www-data` user
+ 7. Create a new directory under the Apache document root:  
+`sudo mkdir /var/www/capirca-web`
+ 8. Copy the static files to the new directory:  
+ `sudo cp -r capirca-web-master/static/* /var/www/capirca-web/`
+ 9. Copy the Python script to the Apache cgi-bin directory:  
  `sudo cp capirca-web-master/aclcheck_cgi.py /usr/lib/cgi-bin/`
- 8. Make the Python script executable:  
+ 10. Make the Python script executable:  
  `sudo chmod +x /usr/lib/cgi-bin/aclcheck_cgi.py`
- 9. Start watching the Apache error log in case anything goes wrong:  
+ 11. Start watching the Apache error log in case anything goes wrong:  
  `tail -f /var/log/apache2/error.log`
- 10. Open capirca-web in the browser of your choice and enjoy
+ 12. Open capirca-web in the browser of your choice and enjoy
 
 Licenses
 --------

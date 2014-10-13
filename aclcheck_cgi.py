@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-capirca_base = '/home/charl/capirca/'
+capirca_base = '/opt/capirca/'
 import sys
 sys.path.append(capirca_base)
 
